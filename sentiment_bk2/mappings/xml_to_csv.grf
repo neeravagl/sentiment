@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="Administrator" created="Mon Dec 22 12:50:26 MST 2014" description="XML To CSV" guiVersion="3.4.4.P" id="1419283218277" licenseCode="Unlicensed" licenseType="Unknown" modified="Mon Dec 22 12:50:26 MST 2014" modifiedBy="Administrator" name="XML_To_CSV" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __index="0" __referenceCounter="0" __schemaType="docCategory" __sourcePath="{}/document/auto_categories/category" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="6451eae7-55b9-4695-986c-417704137b66">
+<Record fieldDelimiter="," name="category" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __schemaType="docCategory" __sourcePath="{}/document/auto_categories/category/strength_score" containerType="SINGLE" label="strength_score" name="strength_score" type="number"/>
+<Field __index="1" __schemaType="docCategory" __sourcePath="{}/document/auto_categories/category/title" containerType="SINGLE" label="title" name="title" type="string"/>
+<Field __index="2" __schemaType="docCategory" __sourcePath="{}/document/auto_categories/category/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Metadata __filteredMetadata="false" __index="0" __referenceCounter="1" __schemaType="docAnalyticData" __sourcePath="{}/document" _dataStructure="OBJECT" _id="__id" _type="Input" id="098d54b3-7e42-4a80-a806-e796be438df0">
+<Record fieldDelimiter="," name="document" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="3" __schemaType="docAnalyticData" __sourcePath="{}/document/config_id" containerType="SINGLE" label="config_id" name="config_id" type="string"/>
+<Field __index="39" __schemaType="docAnalyticData" __sourcePath="{}/document/id" containerType="SINGLE" label="id" name="id" type="string"/>
+<Field __index="40" __schemaType="docAnalyticData" __sourcePath="{}/document/language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __index="41" __schemaType="docAnalyticData" __sourcePath="{}/document/language_score" containerType="SINGLE" label="language_score" name="language_score" type="number"/>
+<Field __index="60" __schemaType="docAnalyticData" __sourcePath="{}/document/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="61" __schemaType="docAnalyticData" __sourcePath="{}/document/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="62" __schemaType="docAnalyticData" __sourcePath="{}/document/source_text" containerType="SINGLE" label="source_text" name="source_text" type="string"/>
+<Field __index="63" __schemaType="docAnalyticData" __sourcePath="{}/document/status" containerType="SINGLE" label="status" name="status" type="string"/>
+<Field __index="64" __schemaType="docAnalyticData" __sourcePath="{}/document/summary" containerType="SINGLE" label="summary" name="summary" type="string"/>
+<Field __index="65" __schemaType="docAnalyticData" __sourcePath="{}/document/tag" containerType="SINGLE" label="tag" name="tag" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="12" __referenceCounter="0" __schemaType="docEntity" __sourcePath="{}/document/entities/entity" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="024df95e-fc90-4aba-b896-761f484de594">
+<Record fieldDelimiter="," name="entity" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="12" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/confident" containerType="SINGLE" label="confident" name="confident" type="boolean"/>
+<Field __index="13" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/entity_type" containerType="SINGLE" label="entity_type" name="entity_type" type="string"/>
+<Field __index="14" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/evidence" containerType="SINGLE" label="evidence" name="evidence" type="integer"/>
+<Field __index="15" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/is_about" containerType="SINGLE" label="is_about" name="is_about" type="boolean"/>
+<Field __index="16" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/label" containerType="SINGLE" label="label" name="label" type="string"/>
+<Field __index="23" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="24" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="37" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/title" containerType="SINGLE" label="title" name="title" type="string"/>
+<Field __index="38" __schemaType="docEntity" __sourcePath="{}/document/entities/entity/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="55" __referenceCounter="0" __schemaType="relationEntity" __sourcePath="{}/document/relations/relation/entities/entity" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="16d6759b-5c37-45da-b758-f33278d0055e" _parent_id="__parent_id" _type="Input" id="e6962343-80f3-4315-b4ee-2900301a2d88">
+<Record fieldDelimiter="," name="entity" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="55" __schemaType="relationEntity" __sourcePath="{}/document/relations/relation/entities/entity/entity_type" containerType="SINGLE" label="entity_type" name="entity_type" type="string"/>
+<Field __index="56" __schemaType="relationEntity" __sourcePath="{}/document/relations/relation/entities/entity/title" containerType="SINGLE" label="title" name="title" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="19" __referenceCounter="0" __schemaType="location" __sourcePath="{}/document/entities/entity/mentions/mention/locations/location" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="7f544732-3b3f-47db-89b3-9fd787a0afa6" _parent_id="__parent_id" _type="Input" id="2cb3483b-010e-4907-92b9-b948af744816">
+<Record fieldDelimiter="," name="location" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="19" __schemaType="location" __sourcePath="{}/document/entities/entity/mentions/mention/locations/location/index" containerType="SINGLE" label="index" name="index" type="integer"/>
+<Field __index="20" __schemaType="location" __sourcePath="{}/document/entities/entity/mentions/mention/locations/location/length" containerType="SINGLE" label="length" name="length" type="integer"/>
+<Field __index="21" __schemaType="location" __sourcePath="{}/document/entities/entity/mentions/mention/locations/location/offset" containerType="SINGLE" label="offset" name="offset" type="integer"/>
+</Record>
+</Metadata>
+<Metadata __index="29" __referenceCounter="0" __schemaType="location" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/locations/location" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="81d48cd0-3d62-4747-b217-717b69543c9f" _parent_id="__parent_id" _type="Input" id="96da0ae7-d2bd-4dc3-9395-aecb10a2f429">
+<Record fieldDelimiter="," name="location" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="29" __schemaType="location" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/locations/location/index" containerType="SINGLE" label="index" name="index" type="integer"/>
+<Field __index="30" __schemaType="location" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/locations/location/length" containerType="SINGLE" label="length" name="length" type="integer"/>
+<Field __index="31" __schemaType="location" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/locations/location/offset" containerType="SINGLE" label="offset" name="offset" type="integer"/>
+</Record>
+</Metadata>
+<Metadata __index="70" __referenceCounter="0" __schemaType="location" __sourcePath="{}/document/themes/theme/mentions/mention/locations/location" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="dce01fdd-d3dc-4fa1-a528-d3d8fce1ec78" _parent_id="__parent_id" _type="Input" id="6c173efc-7e90-47ae-9059-205f551295c3">
+<Record fieldDelimiter="," name="location" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="70" __schemaType="location" __sourcePath="{}/document/themes/theme/mentions/mention/locations/location/index" containerType="SINGLE" label="index" name="index" type="integer"/>
+<Field __index="71" __schemaType="location" __sourcePath="{}/document/themes/theme/mentions/mention/locations/location/length" containerType="SINGLE" label="length" name="length" type="integer"/>
+<Field __index="72" __schemaType="location" __sourcePath="{}/document/themes/theme/mentions/mention/locations/location/offset" containerType="SINGLE" label="offset" name="offset" type="integer"/>
+</Record>
+</Metadata>
+<Metadata __index="17" __referenceCounter="0" __schemaType="mention" __sourcePath="{}/document/entities/entity/mentions/mention" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="024df95e-fc90-4aba-b896-761f484de594" _parent_id="__parent_id" _type="Input" id="7f544732-3b3f-47db-89b3-9fd787a0afa6">
+<Record fieldDelimiter="," name="mention" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="17" __schemaType="mention" __sourcePath="{}/document/entities/entity/mentions/mention/is_negated" containerType="SINGLE" label="is_negated" name="is_negated" type="boolean"/>
+<Field __index="18" __schemaType="mention" __sourcePath="{}/document/entities/entity/mentions/mention/label" containerType="SINGLE" label="label" name="label" type="string"/>
+<Field __index="22" __schemaType="mention" __sourcePath="{}/document/entities/entity/mentions/mention/negating_phrase" containerType="SINGLE" label="negating_phrase" name="negating_phrase" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="27" __referenceCounter="0" __schemaType="mention" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="b318efef-2a59-4a7e-ae91-82091bb21f8a" _parent_id="__parent_id" _type="Input" id="81d48cd0-3d62-4747-b217-717b69543c9f">
+<Record fieldDelimiter="," name="mention" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="27" __schemaType="mention" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/is_negated" containerType="SINGLE" label="is_negated" name="is_negated" type="boolean"/>
+<Field __index="28" __schemaType="mention" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/label" containerType="SINGLE" label="label" name="label" type="string"/>
+<Field __index="32" __schemaType="mention" __sourcePath="{}/document/entities/entity/themes/theme/mentions/mention/negating_phrase" containerType="SINGLE" label="negating_phrase" name="negating_phrase" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="68" __referenceCounter="0" __schemaType="mention" __sourcePath="{}/document/themes/theme/mentions/mention" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="7c8e0b1d-b5c3-4402-adc4-42572b0d1771" _parent_id="__parent_id" _type="Input" id="dce01fdd-d3dc-4fa1-a528-d3d8fce1ec78">
+<Record fieldDelimiter="," name="mention" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="68" __schemaType="mention" __sourcePath="{}/document/themes/theme/mentions/mention/is_negated" containerType="SINGLE" label="is_negated" name="is_negated" type="boolean"/>
+<Field __index="69" __schemaType="mention" __sourcePath="{}/document/themes/theme/mentions/mention/label" containerType="SINGLE" label="label" name="label" type="string"/>
+<Field __index="73" __schemaType="mention" __sourcePath="{}/document/themes/theme/mentions/mention/negating_phrase" containerType="SINGLE" label="negating_phrase" name="negating_phrase" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="42" __referenceCounter="0" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="feb0b55a-27c1-48b6-aafd-bb47476a42e1">
+<Record fieldDelimiter="," name="opinion" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="42" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion/quotation" containerType="SINGLE" label="quotation" name="quotation" type="string"/>
+<Field __index="43" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="44" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="45" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion/speaker" containerType="SINGLE" label="speaker" name="speaker" type="string"/>
+<Field __index="46" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion/topic" containerType="SINGLE" label="topic" name="topic" type="string"/>
+<Field __index="47" __schemaType="opinion" __sourcePath="{}/document/opinions/opinion/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="48" __referenceCounter="0" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="e412227f-67e3-4183-bfa6-1b8bb486fd8c">
+<Record fieldDelimiter="," name="phrase" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="48" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase/is_negated" containerType="SINGLE" label="is_negated" name="is_negated" type="boolean"/>
+<Field __index="49" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase/negating_phrase" containerType="SINGLE" label="negating_phrase" name="negating_phrase" type="string"/>
+<Field __index="50" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="51" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="52" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase/title" containerType="SINGLE" label="title" name="title" type="string"/>
+<Field __index="53" __schemaType="docPhrase" __sourcePath="{}/document/phrases/phrase/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="54" __referenceCounter="0" __schemaType="relation" __sourcePath="{}/document/relations/relation" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="16d6759b-5c37-45da-b758-f33278d0055e">
+<Record fieldDelimiter="," name="relation" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="54" __schemaType="relation" __sourcePath="{}/document/relations/relation/confidence_score" containerType="SINGLE" label="confidence_score" name="confidence_score" type="number"/>
+<Field __index="57" __schemaType="relation" __sourcePath="{}/document/relations/relation/extra" containerType="SINGLE" label="extra" name="extra" type="string"/>
+<Field __index="58" __schemaType="relation" __sourcePath="{}/document/relations/relation/relation_type" containerType="SINGLE" label="relation_type" name="relation_type" type="string"/>
+<Field __index="59" __schemaType="relation" __sourcePath="{}/document/relations/relation/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="4" __referenceCounter="0" __schemaType="sentence" __sourcePath="{}/document/details/sentence" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="2bd72f2a-c6a2-45f7-85c8-221ed147c5f2">
+<Record fieldDelimiter="," name="sentence" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="4" __schemaType="sentence" __sourcePath="{}/document/details/sentence/is_imperative" containerType="SINGLE" label="is_imperative" name="is_imperative" type="boolean"/>
+<Field __index="5" __schemaType="sentence" __sourcePath="{}/document/details/sentence/is_polar" containerType="SINGLE" label="is_polar" name="is_polar" type="boolean"/>
+</Record>
+</Metadata>
+<Metadata __referenceCounter="1" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _type="Output" id="54b3598a-7d82-4e17-bedd-2c1b180d1ab0">
+<Record fieldDelimiter="," name="sentiment_report" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field containerType="SINGLE" label="id" name="id" size="10" type="string"/>
+<Field containerType="SINGLE" label="sourceType" name="sourceType" size="10" type="string"/>
+<Field containerType="SINGLE" label="sourceName" name="sourceName" size="10" type="string"/>
+<Field containerType="SINGLE" label="important" name="important" size="10" type="boolean"/>
+<Field containerType="SINGLE" label="publishedAt" name="publishedAt" size="10" type="string"/>
+<Field containerType="SINGLE" label="sentimentScore" name="sentimentScore" size="10" type="string"/>
+<Field containerType="SINGLE" label="sentimentPolarity" name="sentimentPolarity" size="10" type="string"/>
+<Field containerType="SINGLE" eofAsDelimiter="true" label="summary" name="summary" size="10" type="string"/>
+<Field __artificialType="_id" name="__id" type="long"/>
+</Record>
+</Metadata>
+<Metadata __index="25" __referenceCounter="0" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="024df95e-fc90-4aba-b896-761f484de594" _parent_id="__parent_id" _type="Input" id="b318efef-2a59-4a7e-ae91-82091bb21f8a">
+<Record fieldDelimiter="," name="theme" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="25" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme/evidence" containerType="SINGLE" label="evidence" name="evidence" type="integer"/>
+<Field __index="26" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme/is_about" containerType="SINGLE" label="is_about" name="is_about" type="boolean"/>
+<Field __index="33" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="34" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="35" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme/strength_score" containerType="SINGLE" label="strength_score" name="strength_score" type="number"/>
+<Field __index="36" __schemaType="docTheme" __sourcePath="{}/document/entities/entity/themes/theme/title" containerType="SINGLE" label="title" name="title" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="66" __referenceCounter="0" __schemaType="docTheme" __sourcePath="{}/document/themes/theme" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="7c8e0b1d-b5c3-4402-adc4-42572b0d1771">
+<Record fieldDelimiter="," name="theme" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="66" __schemaType="docTheme" __sourcePath="{}/document/themes/theme/evidence" containerType="SINGLE" label="evidence" name="evidence" type="integer"/>
+<Field __index="67" __schemaType="docTheme" __sourcePath="{}/document/themes/theme/is_about" containerType="SINGLE" label="is_about" name="is_about" type="boolean"/>
+<Field __index="74" __schemaType="docTheme" __sourcePath="{}/document/themes/theme/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="75" __schemaType="docTheme" __sourcePath="{}/document/themes/theme/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="76" __schemaType="docTheme" __sourcePath="{}/document/themes/theme/strength_score" containerType="SINGLE" label="strength_score" name="strength_score" type="number"/>
+<Field __index="77" __schemaType="docTheme" __sourcePath="{}/document/themes/theme/title" containerType="SINGLE" label="title" name="title" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="78" __referenceCounter="0" __schemaType="docTopic" __sourcePath="{}/document/topics/topic" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="098d54b3-7e42-4a80-a806-e796be438df0" _parent_id="__parent_id" _type="Input" id="77e77b2c-44ab-467f-909d-ba5314225cd5">
+<Record fieldDelimiter="," name="topic" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="78" __schemaType="docTopic" __sourcePath="{}/document/topics/topic/hitcount" containerType="SINGLE" label="hitcount" name="hitcount" type="integer"/>
+<Field __index="79" __schemaType="docTopic" __sourcePath="{}/document/topics/topic/sentiment_polarity" containerType="SINGLE" label="sentiment_polarity" name="sentiment_polarity" type="string"/>
+<Field __index="80" __schemaType="docTopic" __sourcePath="{}/document/topics/topic/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="81" __schemaType="docTopic" __sourcePath="{}/document/topics/topic/strength_score" containerType="SINGLE" label="strength_score" name="strength_score" type="number"/>
+<Field __index="82" __schemaType="docTopic" __sourcePath="{}/document/topics/topic/title" containerType="SINGLE" label="title" name="title" type="string"/>
+<Field __index="83" __schemaType="docTopic" __sourcePath="{}/document/topics/topic/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="6" __referenceCounter="0" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="2bd72f2a-c6a2-45f7-85c8-221ed147c5f2" _parent_id="__parent_id" _type="Input" id="5bcc8dcb-94e3-442a-b4af-cb79b6cb825a">
+<Record fieldDelimiter="," name="word" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="6" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word/is_negated" containerType="SINGLE" label="is_negated" name="is_negated" type="boolean"/>
+<Field __index="7" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word/sentiment_score" containerType="SINGLE" label="sentiment_score" name="sentiment_score" type="number"/>
+<Field __index="8" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word/stemmed" containerType="SINGLE" label="stemmed" name="stemmed" type="string"/>
+<Field __index="9" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word/tag" containerType="SINGLE" label="tag" name="tag" type="string"/>
+<Field __index="10" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word/title" containerType="SINGLE" label="title" name="title" type="string"/>
+<Field __index="11" __schemaType="word" __sourcePath="{}/document/details/sentence/words/word/type" containerType="SINGLE" label="type" name="type" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+<Entry dictval.__javaType="java.lang.String" id="DictionaryEntry2" input="true" name="SourceName" output="false" type="string"/>
+<Entry dictval.__javaType="java.lang.String" id="DictionaryEntry3" input="true" name="SourceType" output="false" type="string"/>
+<Entry dictval.__javaType="java.lang.Boolean" id="DictionaryEntry4" input="true" name="Important" output="false" type="boolean"/>
+<Entry dictval.__javaType="java.lang.String" id="DictionaryEntry5" input="true" name="PublishedAt" output="false" type="string"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node charset="UTF-8" enabled="enabled" excludeFields="__id" fileURL="dict:outputPayload" guiName="CSV WRITER" guiX="900" guiY="20" id="DATA_WRITER0" outputFieldNames="false" quotedStrings="true" type="DATA_WRITER">
+<attr name="_data_format"><![CDATA[CSV]]></attr>
+<attr name="__dataSourceDefinition"><![CDATA[${Project_Home}/src/main/resources/sentiment_report.csv]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'document' -&gt; 'sentiment_report'" guiX="460" guiY="20" id="FOREACH_DOCUMENT_SENTIMENT_REPORT" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = str2long(input.__id);
+//END -> DO NOT REMOVE
+output.id = input.id;
+output.summary = input.summary;
+output.sentimentPolarity = input.sentiment_polarity;
+output.sentimentScore = num2str(input.sentiment_score);
+output.sourceName = inputArguments.SourceName;
+output.sourceType = inputArguments.SourceType;
+output.publishedAt = inputArguments.PublishedAt;
+output.important = inputArguments.Important;]]></attr>
+</Node>
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiName="XML READER" guiX="20" guiY="20" id="XML_READER0" type="XML_READER">
+<attr name="xmlSchemaURL"><![CDATA[./src/main/resources/DocsAnalyticDataSchema.xsd]]></attr>
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath="/document">
+  <Mapping cloverField="config_id" trim="true" xpath="config_id"/>
+  <Mapping cloverField="id" trim="true" xpath="id"/>
+  <Mapping cloverField="language" trim="true" xpath="language"/>
+  <Mapping cloverField="language_score" trim="true" xpath="language_score"/>
+  <Mapping cloverField="sentiment_polarity" trim="true" xpath="sentiment_polarity"/>
+  <Mapping cloverField="sentiment_score" trim="true" xpath="sentiment_score"/>
+  <Mapping cloverField="source_text" trim="true" xpath="source_text"/>
+  <Mapping cloverField="status" trim="true" xpath="status"/>
+  <Mapping cloverField="summary" trim="true" xpath="summary"/>
+  <Mapping cloverField="tag" trim="true" xpath="tag"/>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__rootGlobalElementName"><![CDATA[document]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="FOREACH_DOCUMENT_SENTIMENT_REPORT:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="54b3598a-7d82-4e17-bedd-2c1b180d1ab0" outPort="Port 0 (out)" toNode="DATA_WRITER0:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="098d54b3-7e42-4a80-a806-e796be438df0" outPort="Port 0 (out)" toNode="FOREACH_DOCUMENT_SENTIMENT_REPORT:0"/>
+</Phase>
+</Graph>

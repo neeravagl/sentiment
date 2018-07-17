@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="JSON" type="JSONType"/>
+	<xs:complexType name="mentionsType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" minOccurs="0"/>
+			<xs:element name="alert_id" type="xs:int" minOccurs="0"/>
+			<xs:element name="title" type="xs:string" minOccurs="0"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="url" type="xs:string" minOccurs="0"/>
+			<xs:element name="display_site" type="xs:string" minOccurs="0"/>
+			<xs:element name="unique_id" type="xs:string" minOccurs="0"/>
+			<xs:element name="published_at" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="created_at" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+			<xs:element name="updated_at" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="favorite" type="xs:string" minOccurs="0"/>
+			<xs:element name="trashed" type="xs:string" minOccurs="0"/>
+			<xs:element name="trashed_set_by_user" type="xs:string" minOccurs="0"/>
+			<xs:element name="read" type="xs:string" minOccurs="0"/>
+			<xs:element name="tone" type="xs:byte" minOccurs="0"/>
+			<xs:element name="tone_score" type="xs:float" minOccurs="0"/>
+			<xs:element name="relevance_score" type="xs:float" minOccurs="0"/>
+			<xs:element name="source_type" type="xs:string" minOccurs="0"/>
+			<xs:element name="source_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="source_url" type="xs:string" minOccurs="0"/>
+			<xs:element name="language_code" type="xs:string" minOccurs="0"/>
+			<xs:element name="tasks" type="xs:string" minOccurs="0"/>
+			<xs:element name="logs" type="xs:string" minOccurs="0"/>
+			<xs:element name="children" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType mixed="true">
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="type" type="xs:string"/>
+						<xs:element name="mention" type="mentionType"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="picture_url" type="xs:string" minOccurs="0"/>
+			<xs:element name="twitter_real_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="important" type="xs:string" minOccurs="0"/>
+			<xs:element name="important_reason" type="xs:byte" minOccurs="0"/>
+			<xs:element name="offsets" type="offsetsType" minOccurs="0"/>
+			<xs:element name="permissions" type="permissionsType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pullType">
+		<xs:all>
+			<xs:element name="href" type="xs:string" minOccurs="0"/>
+			<xs:element name="params" type="paramsType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="paramsType">
+		<xs:all>
+			<xs:element name="limit" type="xs:byte" minOccurs="0"/>
+			<xs:element name="before_date" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="since_id" type="xs:long" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="permissionsType">
+		<xs:all>
+			<xs:element name="favorite" type="xs:string" minOccurs="0"/>
+			<xs:element name="trash" type="xs:string" minOccurs="0"/>
+			<xs:element name="create_task" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="moreType">
+		<xs:all>
+			<xs:element name="href" type="xs:string" minOccurs="0"/>
+			<xs:element name="params" type="paramsType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="childrenType">
+		<xs:all>
+			<xs:element name="type" type="xs:string"/>
+			<xs:element name="mention" type="mentionType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="mentionType">
+		<xs:all>
+			<xs:element name="id" type="xs:long" minOccurs="0"/>
+			<xs:element name="alert_id" type="xs:int" minOccurs="0"/>
+			<xs:element name="title" type="xs:string" minOccurs="0"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="url" type="xs:string" minOccurs="0"/>
+			<xs:element name="display_site" type="xs:string" minOccurs="0"/>
+			<xs:element name="unique_id" type="xs:string" minOccurs="0"/>
+			<xs:element name="published_at" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="created_at" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+			<xs:element name="updated_at" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="favorite" type="xs:string" minOccurs="0"/>
+			<xs:element name="trashed" type="xs:string" minOccurs="0"/>
+			<xs:element name="trashed_set_by_user" type="xs:string" minOccurs="0"/>
+			<xs:element name="read" type="xs:string" minOccurs="0"/>
+			<xs:element name="tone" type="xs:byte" minOccurs="0"/>
+			<xs:element name="tone_score" type="xs:float" minOccurs="0"/>
+			<xs:element name="relevance_score" type="xs:byte" minOccurs="0"/>
+			<xs:element name="source_type" type="xs:string" minOccurs="0"/>
+			<xs:element name="source_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="source_url" type="xs:string" minOccurs="0"/>
+			<xs:element name="language_code" type="xs:string" minOccurs="0"/>
+			<xs:element name="tasks" type="xs:string" minOccurs="0"/>
+			<xs:element name="logs" type="xs:string" minOccurs="0"/>
+			<xs:element name="children" type="xs:string" minOccurs="0"/>
+			<xs:element name="parent_id" type="xs:long" minOccurs="0"/>
+			<xs:element name="picture_url" type="xs:string" minOccurs="0"/>
+			<xs:element name="twitter_real_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="important" type="xs:string" minOccurs="0"/>
+			<xs:element name="important_reason" type="xs:byte" minOccurs="0"/>
+			<xs:element name="offsets" type="offsetsType" minOccurs="0"/>
+			<xs:element name="permissions" type="permissionsType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="_linksType">
+		<xs:all>
+			<xs:element name="more" type="moreType" minOccurs="0"/>
+			<xs:element name="pull" type="pullType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="offsetsType">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="source_name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="source_url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JSONType">
+		<xs:sequence>
+			<xs:element name="mentions" type="mentionsType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="_links" type="_linksType" minOccurs="0"/>
+			<xs:element name="recently_reenabled" type="xs:string" minOccurs="0"/>
+			<xs:element name="reached_history_limit" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

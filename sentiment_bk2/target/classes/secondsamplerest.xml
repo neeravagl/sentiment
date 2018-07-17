@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:watson-alchemy-language="http://www.mulesoft.org/schema/mule/watson-alchemy-language" xmlns:facebook="http://www.mulesoft.org/schema/mule/facebook" xmlns:sqs="http://www.mulesoft.org/schema/mule/sqs" xmlns:redis="http://www.mulesoft.org/schema/mule/redis" xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:twitter="http://www.mulesoft.org/schema/mule/twitter" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:https="http://www.mulesoft.org/schema/mule/https" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/https http://www.mulesoft.org/schema/mule/https/current/mule-https.xsd
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd
+http://www.mulesoft.org/schema/mule/twitter http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd
+http://www.mulesoft.org/schema/mule/redis http://www.mulesoft.org/schema/mule/redis/current/mule-redis.xsd
+http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/batch/current/mule-batch.xsd
+http://www.mulesoft.org/schema/mule/sqs http://www.mulesoft.org/schema/mule/sqs/current/mule-sqs.xsd
+http://www.mulesoft.org/schema/mule/facebook http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd
+http://www.mulesoft.org/schema/mule/watson-alchemy-language http://www.mulesoft.org/schema/mule/watson-alchemy-language/current/mule-watson-alchemy-language.xsd">
+    <https:connector name="HTTP_HTTPS" cookieSpec="netscape" validateConnections="true" sendBufferSize="0" receiveBufferSize="0" receiveBacklog="0" clientSoTimeout="10000" serverSoTimeout="10000" socketSoLinger="0" doc:name="HTTP-HTTPS">
+        <https:tls-key-store path="keystore.jks" keyPassword="mulesoft" storePassword="mulesoft"/>
+    </https:connector>
+    <data-mapper:config name="XML_To_CSV" transformationGraphPath="xml_to_csv.grf" doc:name="XML_To_CSV"/>
+    <file:connector name="SentimentOut" writeToDirectory="C:\tmp" autoDelete="false" outputAppend="true" streaming="true" validateConnections="true" doc:name="File" workFileNamePattern="sentimentOut.csv"/>
+    <data-mapper:config name="Map_String__String__To_Map" transformationGraphPath="map_string,_string__to_map.grf" doc:name="Map_String__String__To_Map"/>
+    
+    <redis:config name="Redis" host="pub-redis-11546.us-east-1-1.2.ec2.garantiadata.com" port="11546" password="Neerav1983" doc:name="Redis"/>
+    <sqs:config name="Amazon_SQS" accessKey="AKIAISRHUHJRJSYSNHLA" secretKey="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" queueName="sentimentQueue" queueUrl="https://sqs.us-west-2.amazonaws.com/519847171431/sentimentQueue" doc:name="Amazon SQS"/>
+    <watson-alchemy-language:config name="Watson_AlchemyLanguage_Service__Configuration" apiKey="85a1bf2dd9d41de1003e7a5302f4e7269c563de7" doc:name="Watson AlchemyLanguage Service: Configuration"/>
+    <http:request-config name="HTTP_Request_Mention_Configuration" protocol="HTTPS" host="api.mention.net" port="449" basePath="api" doc:name="HTTP Request Configuration"/>
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+    <flow name="getAccountFlow" >
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/start" doc:name="HTTP"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <http:request config-ref="HTTP_Request_Mention_Configuration" path="accounts/me" method="GET" doc:name="HTTP">
+            <http:request-builder>
+                <http:header headerName="Accept" value="application/json"/>
+                <http:header headerName="Authorization" value="Bearer ZWRhZGFiYzZmZjc3OGMzYWE3ZjA5YjMxYjI5ODI0NDU5MWY2NTE1YzI5M2QwNzIxNWQzNDI3OTJlMWRhYmU5YQ"/>
+                <http:header headerName="Content-Type" value="application/json"/>
+            </http:request-builder>
+        </http:request>
+        <logger level="INFO" doc:name="Logger"/>
+        <flow-ref name="getAlertsFlow" doc:name="Flow Reference"/>
+    </flow>
+    <flow name="getAlertsFlow" >
+        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
+        <set-variable variableName="href" value="#[message.payload._links.me.href]" doc:name="Variable"/>
+        <logger message="Magic Variable = #[message.payload._links.me.href]" level="INFO" doc:name="Logger"/>
+        <set-property propertyName="Accept" value="application/json" doc:name="Property"/>
+        <set-property propertyName="Authorization" value="Bearer ZWRhZGFiYzZmZjc3OGMzYWE3ZjA5YjMxYjI5ODI0NDU5MWY2NTE1YzI5M2QwNzIxNWQzNDI3OTJlMWRhYmU5YQ" doc:name="Property"/>
+        <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+        <http:request config-ref="HTTP_Request_Mention_Configuration" path="#[flowVars['href']]/alerts" method="GET" doc:name="HTTP"/>
+        <flow-ref name="getMentionsFlow" doc:name="Flow Reference"/>
+    </flow>
+    <flow name="getMentionsFlow" >
+        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
+        <set-variable variableName="alertId" value="#[message.payload.alerts[0].id]" doc:name="Variable"/>
+        <set-property propertyName="Accept" value="application/json" doc:name="Property"/>
+        <set-property propertyName="Authorization" value="Bearer ZWRhZGFiYzZmZjc3OGMzYWE3ZjA5YjMxYjI5ODI0NDU5MWY2NTE1YzI5M2QwNzIxNWQzNDI3OTJlMWRhYmU5YQ" doc:name="Property"/>
+        <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+        <https:outbound-endpoint exchange-pattern="request-response" method="GET" connector-ref="HTTP_HTTPS" address="https://api.mention.net#[flowVars['href']]/alerts/#[flowVars['alertId']]/mentions" doc:name="HTTP"/>
+        <flow-ref name="parseMentionsFlow" doc:name="Flow Reference"/>
+    </flow>
+    <flow name="parseMentionsFlow" >
+        <json:json-to-object-transformer returnClass="java.util.HashMap" doc:name="JSON to Object"/>
+        <logger message="Total Payloads = #[payload.mentions.size()]" level="INFO" doc:name="Logger"/>
+        <foreach collection="#[payload.mentions]" doc:name="For Each">
+            <logger message="Desription is #[payload.description]" level="INFO" doc:name="Logger"/>
+            <flow-ref name="semantriaQueueDocumentFlow" doc:name="semantriaQueueDocumentFlow"/>
+        </foreach>
+        <flow-ref name="sleepFlow" doc:name="Flow Reference"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <foreach collection="#[payload.mentions]" doc:name="For Each">
+            <flow-ref name="getprocessedDocument" doc:name="Flow Reference"/>
+        </foreach>
+    </flow>
+    <flow name="sleepFlow"  processingStrategy="synchronous">
+        <component doc:name="Java">
+            <singleton-object class="org.mule.transformers.Sleeper"/>
+        </component>
+    </flow>
+    <flow name="semantriaQueueDocumentFlow"  processingStrategy="synchronous">
+        <component  doc:name="Java">
+            <singleton-object class="org.mule.transformers.QueueDocument"/>
+        </component>
+        <logger message="docID = " level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="getprocessedDocument"  processingStrategy="synchronous">
+        <logger level="INFO" doc:name="Logger" message="Step 1 Payload is #[payload]"/>
+        <set-variable variableName="SourceName" value="#[payload.get('source_name')]" doc:name="Variable"/>
+         <set-variable variableName="SourceType" value="#[payload.get('source_type')]" doc:name="Variable"/>
+          <set-variable variableName="Important" value="#[payload.get('important')]" doc:name="Variable"/>
+          <set-variable variableName="PublishedAt" value="#[payload.get('published_at')]" doc:name="Variable"/>
+        <flow-ref name="semantriaFetchDocumentFlow" doc:name="Flow Reference"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <flow-ref name="SentimentXMLtoCSV" doc:name="Flow Reference"/>
+    </flow>
+    <flow name="semantriaFetchDocumentFlow"  processingStrategy="synchronous">
+        <component doc:name="Java">
+            <singleton-object class="org.mule.transformers.GetProcessedDocument"/>
+        </component>
+    </flow>
+    <flow name="SentimentXMLtoCSV"  processingStrategy="synchronous">
+        <message-filter doc:name="Message">
+            <not-filter>
+                <payload-type-filter expectedType="org.mule.transport.NullPayload"/>
+            </not-filter>
+        </message-filter>
+        <logger message="Payload is #[payload]" level="INFO" doc:name="Logger"/>
+        <async doc:name="Async">
+            <expression-filter evaluator="xpath" expression="(document/sentiment_polarity)='negative'" doc:name="Expression"/>
+            <logger level="INFO" doc:name="Logger"/>
+        </async>
+        <data-mapper:transform config-ref="XML_To_CSV" doc:name="XML To CSV">
+            <data-mapper:input-arguments>
+                <data-mapper:input-argument key="PublishedAt">#[flowVars.PublishedAt]</data-mapper:input-argument>
+                <data-mapper:input-argument key="SourceType">#[flowVars.SourceType]</data-mapper:input-argument>
+                <data-mapper:input-argument key="SourceName">#[flowVars.SourceName]</data-mapper:input-argument>
+                <data-mapper:input-argument key="Important">#[flowVars.Important]</data-mapper:input-argument>
+            </data-mapper:input-arguments>
+        </data-mapper:transform>
+        <byte-array-to-string-transformer doc:name="Byte Array to String"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <sqs:send-message config-ref="Amazon_SQS" queueUrl="https://sqs.us-west-2.amazonaws.com/519847171431/sentimentQueue" accessKey="AKIAISRHUHJRJSYSNHLA" secretKey="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" queueName="sentimentQueue" doc:name="Amazon SQS"/>
+    </flow>
+    <flow name="getRedis"  processingStrategy="synchronous">
+        <redis:get config-ref="Redis" key="#[xpath('/document/id/text()').text]" doc:name="Redis"/>
+        <payload-type-filter expectedType="org.mule.transport.NullPayload" doc:name="Payload"/>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="querySemantriaDocument" >
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" doc:name="HTTP" path="sentiment"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <data-mapper:transform config-ref="Map_String__String__To_Map" input-ref="#[message.inboundProperties[&quot;http.query.params&quot;]]" doc:name="Map&lt;String, String&gt; To Map">
+            <data-mapper:input-arguments>
+                <data-mapper:input-argument key="sentimentId">#[message.inboundProperties.'http.query.params'.id]</data-mapper:input-argument>
+            </data-mapper:input-arguments>
+        </data-mapper:transform>
+        <flow-ref name="semantriaFetchDocumentFlow" doc:name="Flow Reference"/>
+        <message-filter doc:name="FilterNull">
+            <not-filter>
+                <payload-type-filter expectedType="org.mule.transport.NullPayload"/>
+            </not-filter>
+        </message-filter>
+        <json:xml-to-json-transformer doc:name="XML to JSON"/>
+        <set-payload value="#[payload]" doc:name="Set Payload"/>
+    </flow>
+</mule>

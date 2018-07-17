@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-project xmlns="http://www.mulesoft.com/tooling/project" runtimeId="org.mule.tooling.server.3.8.1.ee" schemaVersion="3.5.0.0">
+    <name>sentiment_bk2</name>
+    <description></description>
+    <muleExtension name="Twitter" qualifier="org.mule.tooling.ui.contribution.twitter.3.5.0"/>
+    <muleExtension name="Dropbox" qualifier="org.mule.tooling.ui.contribution.dropbox.3.4.0"/>
+    <muleExtension name="Redis" qualifier="org.mule.tooling.ui.contribution.redis"/>
+    <muleExtension name="Amazon SQS" qualifier="org.mule.tooling.ui.contribution.sqs.3.5.0"/>
+    <muleExtension name="Facebook" qualifier="org.mule.tooling.ui.contribution.facebook.3.5.0"/>
+    <muleExtension name="Watson AlchemyLanguage Service" qualifier="org.mule.tooling.ui.contribution.watson-alchemy-language.3.6.0"/>
+</mule-project>

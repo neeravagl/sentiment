@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="MULE_RUNTIME"/>
+	<classpathentry kind="lib" path="lib/SemantriaJavaSDK-3.5.75-jar-with-dependencies.jar" rootpath="/"/>
+	<classpathentry kind="con" path="MULE_LIB/Twitter/org.mule.tooling.ui.contribution.twitter.3.5.0"/>
+	<classpathentry kind="con" path="MULE_LIB/Dropbox/org.mule.tooling.ui.contribution.dropbox.3.4.0"/>
+	<classpathentry kind="con" path="MULE_LIB/Redis/org.mule.tooling.ui.contribution.redis"/>
+	<classpathentry kind="con" path="MULE_LIB/Amazon SQS/org.mule.tooling.ui.contribution.sqs.3.5.0"/>
+	<classpathentry kind="con" path="MULE_LIB/Facebook/org.mule.tooling.ui.contribution.facebook.3.5.0"/>
+	<classpathentry kind="src" path="src/main/app"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/resources"/>
+	<classpathentry kind="src" path="src/main/api"/>
+	<classpathentry kind="src" path="mappings"/>
+	<classpathentry kind="con" path="MULE_LIB/Watson AlchemyLanguage Service/org.mule.tooling.ui.contribution.watson-alchemy-language.3.6.0"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
