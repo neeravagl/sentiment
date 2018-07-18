@@ -132,7 +132,7 @@ http://www.mulesoft.org/schema/mule/watson-alchemy-language http://www.mulesoft.
         <logger level="INFO" doc:name="Logger"/>
     </flow>
     <flow name="querySemantriaDocument" >
-        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" doc:name="HTTP" path="sentiment"/>
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/sentiment" doc:name="HTTP"/>
         <logger level="INFO" doc:name="Logger"/>
         <data-mapper:transform config-ref="Map_String__String__To_Map" input-ref="#[message.inboundProperties[&quot;http.query.params&quot;]]" doc:name="Map&lt;String, String&gt; To Map">
             <data-mapper:input-arguments>
